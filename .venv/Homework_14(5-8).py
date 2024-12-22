@@ -115,6 +115,36 @@ def rec_midl_num(lists):
     if len(lists) <= 1:
         return lists
 
+#EX7
+
+def len_dec_pass(func):
+    def wrraper(password):
+        if len(password) > 8:
+            return ("good")
+        else:
+            raise ValueError("Invallid pass")
+    return wrraper
+
+@len_dec_pass
+def password_lenvallid(password):
+    return password
+
+passwo = "ghjgjkjkjkf"
+print(password_lenvallid(passwo))
+
+
+password = "ghjkgghjf"
+
+def wrraper(password):
+    if len(password) > 8:
+        return ("Vallid pass")
+    else:
+        raise ValueError("Invallid pass")
+
+try:
+    print(wrraper(password))
+except ValueError as e:
+    print(e)
 
 
 
